@@ -12,7 +12,7 @@ export default function MæglerErgaring() {
         <div className="flex border-b-2 pb-[2em] ">
       <Image src={erfaring} height={200} width={300} alt="erfaring" />
       <article className="ml-[2em]">
-        <h2 className="font-bold text-[1.3em]">Vi har fulgt danskerne hjem i snart 4 årtier</h2>
+        <h2 className="font-bold text-[1.3em]">Vi har fulgt danskerne hjem i <br /> snart 4 årtier</h2>
         <p className="font-semibold mb-[1em] mt-[1em]">Det synes vi siger noget om os!</p>
         <span className="text-xs">
           It is a long established fact that a reader will be distracted by the <br />

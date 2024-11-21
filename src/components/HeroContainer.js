@@ -5,7 +5,7 @@ export default function HeroContainer() {
         <div className="flex flex-col justify-center items-center h-full">
           <h1 className="text-white font-bold text-[2.5em] z-10">Søg efter din drømmebolig</h1>
           <div className="bg-white h-[10em] w-[40em] mt-[2em]  p-[2em] z-10">
-            <p className="font-semibold mb-[1em]">Søg blandt 158 boliger til salg i 74 butikker</p>
+            <p className="font-semibold mb-[1em]"><span className="border-b-[3px] border-[#162A41]">Søg</span> blandt 158 boliger til salg i 74 butikker</p>
             <span className="text-xs">Hvad skal din næste bolig indeholde</span>
             <div className="w-full flex justify-start items-center">
                 <input type="text" className="placeholder:italic placeholder:text-slate-400 block bg-white w-[25em] border border-slate-300 rounded-[.3em] py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." name="search"/>

@@ -21,7 +21,9 @@ export default function Header() {
           </div>
         </div>
         <div className="flex justify-around items-center h-[5em] px-[10em]">
-          <Image src={logo} height={250} width={250} alt="logo" />
+          <Link href="/">
+            <Image src={logo} height={250} width={250} alt="logo" />
+          </Link>
           <nav className="text-[1em]">
             <ul className="flex">
               <li>
