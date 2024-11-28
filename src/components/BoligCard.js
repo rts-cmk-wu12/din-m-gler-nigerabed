@@ -2,14 +2,22 @@ import Image from "next/image";
 
 export default function BoligCard({ bolig }) {
   // console.log(bolig);
+  const BgColors = {
+    "A": "#008000",  // Grøn
+    "B": "#FFD700",  // Gul
+    "C": "#FF7F00",  // Orange
+    "D": "#FF0000",  // Rød
+};
 
-  function formatPrice(millionNumber) {
-    const inThousands = millionNumber / 1000; // Convert to thousands
-    return inThousands.toLocaleString("en-US", {
-      style: "currency",
-      currency: "DKK",
-    });
-  }
+const energyLabelColor = BgColors[bolig.energylabel];
+
+//   function formatPrice(millionNumber) {
+//     const inThousands = millionNumber / 10; // Convert to thousands
+//     return inThousands.toLocaleString("en-US", {
+//       style: "currency",
+//       currency: "DKK",
+//     });
+//   }
 
   return (
     <section className="p-[2em]">
@@ -34,14 +42,14 @@ export default function BoligCard({ bolig }) {
       </div>
       <div className="flex justify-between mt-[1em]">
         <div className="flex">
-          <span className="bg-green-600 h-[1.5em] w-[1em] mr-[1em] text-center">
+          <span className="bg-green-600 h-[1.5em] w-[1em] mr-[1em] text-center"  style={{backgroundColor: energyLabelColor}}>
             {bolig.energylabel}
           </span>
           <span className="text-xs">
             {bolig.rooms} værelser • {bolig.livingspace} m²
           </span>
         </div>
-        <span> {formatPrice(bolig.price)} </span>
+        <span>kr. {bolig.price.toLocaleString("da-DK")} </span>
       </div>
     </section>
   );

@@ -1,11 +1,14 @@
+"use client"
 import Image from "next/image";
 import email from "../assets/images/email.png";
 import call from "../assets/images/call.png";
 import user from "../assets/images/user.png";
 import logo from "../assets/images/logo.png";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const path = usePathname()
   return (
     <>
       <header>
@@ -27,14 +30,14 @@ export default function Header() {
           <nav className="text-[1em]">
             <ul className="flex">
               <li>
-                <Link href="/boligTilSalg" className="mr-8">
+                <Link href="/boligTilSalg" className={`${path === "/boligTilSalg" ? "text-red-500" : "text-black"} mr-8`}>
                   Boliger til salg
                 </Link>
               </li>
               <li>
-                <a href="" className="mr-8">
+                <Link href="/alleMedarbejder" className={`${path === "/alleMedarbejder" ? "text-red-500" : "text-black"} mr-8`}>
                   Mæglere
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="" className="mr-8">

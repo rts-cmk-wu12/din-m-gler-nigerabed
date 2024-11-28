@@ -4,9 +4,9 @@ import BoligCard from "./BoligCard";
 export default async function UdvalgteBoliger() {
   const response = await fetch("https://dinmaegler.onrender.com/homes");
   const allBoligDataata = await response.json();
-  console.log("Bolig Dataaaa", allBoligDataata);
+  // console.log("Bolig Dataaaa", allBoligDataata);
   const firstFourBolig = allBoligDataata.slice(0, 4);
-  console.log(firstFourBolig);
+  // console.log(firstFourBolig);
 
   return (
     <section className="bg-[#F8F8FB] flex flex-col justify-center items-center">
@@ -20,8 +20,8 @@ export default async function UdvalgteBoliger() {
       </div>
       <div className="grid grid-cols-2 place-content-around px-[15em]">
         {firstFourBolig.map((bolig) => (
-            <div >
-                <BoligCard key={bolig.id} bolig={bolig} />
+            <div key={bolig.id} >
+                <BoligCard bolig={bolig} />
             </div>
         ))}
       </div>
