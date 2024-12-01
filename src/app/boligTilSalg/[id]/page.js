@@ -3,21 +3,22 @@ import group1 from "../../../assets/images/Group1.png";
 import group2 from "../../../assets/images/Group2.png";
 import group3 from "../../../assets/images/Group3.png";
 import group4 from "../../../assets/images/Group4.png";
+import AnsvaligMælgerCard from "@/components/AnsvaligMælgerCard";
 
 export default async function BoligDetails({ params }) {
   const response = await fetch(
     `https://dinmaegler.onrender.com/homes/${params.id}`
   );
   const BoligDetailsData = await response.json();
-//   console.log("BoligDetailsData", BoligDetailsData);
+  console.log("BoligDetailsData", BoligDetailsData.agent);
   return (
     <>
       <Image
         src={BoligDetailsData.images[0].url}
-        height={500}
-        width={400}
+        height={800}
+        width={500}
         alt="bolig"
-        className="h-[35em] w-[100%] object-cover"
+        className="h-[30em] w-[100%] object-cover"
       />
       <section className=" px-[15em] py-[2em]  ">
         <div className="flex justify-between items-center border-b-2 pb-[2em]">
@@ -85,17 +86,16 @@ export default async function BoligDetails({ params }) {
           </div>
           <div className="flex justify-between">
             <span>Byggeår:</span>
-            <span className="ml-[2em]">{BoligDetailsData. built}</span>
+            <span className="ml-[2em]">{BoligDetailsData.built}</span>
           </div>
           <div className="flex justify-between">
             <span>Ombygget:</span>
-            <span className="ml-[2em]">{BoligDetailsData. remodel}</span>
+            <span className="ml-[2em]">{BoligDetailsData.remodel}</span>
           </div>
           <div className="flex justify-between">
             <span>Energymæke:</span>
             <span className="ml-[2em] ">{BoligDetailsData.energylabel}</span>
           </div>
-         
         </article>
         <article>
           <div className="flex justify-between w-[15em]">
@@ -114,8 +114,30 @@ export default async function BoligDetails({ params }) {
             <span>Ejerudgifter:</span>
             <span className="ml-[2em]">Kr. {BoligDetailsData.gross}</span>
           </div>
-         
         </article>
+      </section>
+      <section className="flex justify-center items-start mt-[5em] mb-[7em] px-[15em]">
+        <article className="text-xs w-[35em] mr-[2em]">
+            <h3 className="text-lg font-semibold mb-[1em]">Beskrivelse</h3>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more or less normal distribution of
+          letters as opposed to using Content here content here making it look
+          like readable English. Many desktop publishing packages and web page
+          editors now use Lorem Ipsum as their default. <br /> <br />
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don't look even slightly believable.
+          If you are going to use a passage of Lorem Ipsum, you need to be sure
+          there isn't anything embarrassing hidden in the middle of text. All
+          the Lorem Ipsum generators on the Internet tend to repeat predefined
+          chunks as necessary, making this the first true generator on the
+          Internet.
+        </article>
+        <div className="">
+            <h3 className="text-lg font-semibold mb-[1em]">Ansvalig mægler</h3>
+          <AnsvaligMælgerCard agent={BoligDetailsData.agent} />
+        </div>
       </section>
     </>
   );

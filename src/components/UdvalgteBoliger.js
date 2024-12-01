@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BoligCard from "./BoligCard";
+import Button from "./Button";
 
 export default async function UdvalgteBoliger() {
   const response = await fetch("https://dinmaegler.onrender.com/homes");
@@ -26,7 +27,8 @@ export default async function UdvalgteBoliger() {
         ))}
       </div>
       <Link href="/boligTilSalg">
-        <button className="bg-[#162A41] text-white h-[2.3em] w-[10em] rounded-[.2em] ml-[.5em] mt-[1em] mb-[4em]">Se alle boliger</button>
+      <Button text={"Se alle boliger"}/>
+        {/* <button className="bg-[#162A41] text-white h-[2.3em] w-[10em] rounded-[.2em] ml-[.5em] mt-[1em] mb-[4em]">Se alle boliger</button> */}
       </Link>
     </section>
   );

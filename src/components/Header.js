@@ -5,10 +5,22 @@ import call from "../assets/images/call.png";
 import user from "../assets/images/user.png";
 import logo from "../assets/images/logo.png";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation"; 
+import { useSession } from "next-auth/react";
+
+import { signOut } from "next-auth/react";
 
 export default function Header() {
   const path = usePathname()
+  const session = useSession();
+  
+
+  function handleSignOut(){
+    signOut({ callbackUrl: "/" });
+   
+  }
+
+ 
   return (
     <>
       <header>
@@ -18,10 +30,13 @@ export default function Header() {
 
             <Image src={call} height={100} width={100} alt="call" />
           </div>
-          <div className="flex items-center justify-between w-[5em]">
+          <Link href="/login">
+          <div className="flex items-center justify-between w-[5em] mt-[.4em]">
             <Image src={user} height={20} width={20} alt="user" />
-            <span>Log ind</span>
+            {session.status=="authenticated"?(<span onClick={ handleSignOut}>Log out</span>):(<span>Log ind</span>)}
+            
           </div>
+          </Link>
         </div>
         <div className="flex justify-around items-center h-[5em] px-[10em]">
           <Link href="/">

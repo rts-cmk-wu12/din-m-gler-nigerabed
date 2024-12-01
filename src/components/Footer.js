@@ -8,8 +8,8 @@ import icon3 from "../assets/images/Icon3.png";
 export default function Footer() {
   return (
     <footer className="bg-[#E5E5E5]">
-      <div className="grid grid-cols-2 grid-rows-[auto,1fr,1fr]">
-      <article className="col-span-2 mt-[2em] mb-[3em] p-[4em]">
+      <div className="grid grid-cols-2 grid-rows-2">
+      <article className="col-span-2 mt-[4em] pl-[8em] ml-[10em]">
         <Link href="/">
           <Image src={logo} height={250} width={250} alt="logo"/>
         </Link>
@@ -20,7 +20,7 @@ export default function Footer() {
           words.
         </p>
       </article>
-      <section className="bg-white shadow-2xl row-start-2 col-start-1 row-span-2 z-10 p-[2em] mb-[4em]">
+      <section className="bg-white shadow-2xl row-start-2 col-start-1 row-span-2 z-10 p-[2em] mb-[4em] w-[20em] ml-[20em]">
         
           <div className="flex my-[1em]">
             <Image src={icon1} height={40} width={40} alt="icon" className="h-[3em]" />
@@ -50,7 +50,7 @@ export default function Footer() {
         
       </section>
       <section className="col-start-2">
-        <div className="mt-[1em] w-[37em]  pl-[2em]">
+      
           <ul>
             <h3 className="font-bold mb-[1em]">Quick Links</h3>
             <li className="text-[.8em] mb-[.5em]">
@@ -66,7 +66,7 @@ export default function Footer() {
               <Link href="">Log ind/ bliv bruger</Link>
             </li>
           </ul>
-        </div>
+    
       </section>
       <section className="grid grid-cols-2 bg-white row-start-3 row-end-4 col-start-1 col-end-3 z-[0]">
         <div className="col-start-2 p-[2em]">

@@ -5,7 +5,8 @@ import play from "../assets/images/Play.png";
 
 export default function SalgsProcessen() {
   return (
-    <section className="bg-[#162A41] mt-[5em] px-[23em] text-white flex pt-[3em]">
+    <section className="bg-[#162A41] mt-[1 
+    em] px-[23em] text-white flex pt-[3em]">
       <div className="mr-[6em]">
         <h2 className="text-lg font-bold mb-[1em]">
           Hold dig opdateret <br />
