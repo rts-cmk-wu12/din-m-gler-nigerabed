@@ -8,11 +8,11 @@ export default async function AnsvaligMælgerCard({ agent }) {
   return (
     <>
       <section >
-        <div className="flex justify-center mb-[2em] p-[2em] border-neutral-200 border-2">
+        <div className="flex justify-center mb-[2em] p-[2em] border-neutral-200 border-2 shadow-lg">
           <div className="relative">
             <Image
               src={agent.image.url}
-              height={100}
+              height={200}
               width={200}
               alt="agent"
               className="h-[15em] w-[15em] max-w-fit object-cover"

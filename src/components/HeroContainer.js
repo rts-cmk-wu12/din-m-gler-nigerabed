@@ -8,8 +8,9 @@ export default function HeroContainer() {
             <p className="font-semibold mb-[1em]"><span className="border-b-[3px] border-[#162A41]">Søg</span> blandt 158 boliger til salg i 74 butikker</p>
             <span className="text-xs">Hvad skal din næste bolig indeholde</span>
             <div className="w-full flex justify-start items-center">
-                <input type="text" className="placeholder:italic placeholder:text-slate-400 block bg-white w-[25em] border
-                 border-slate-300 rounded-[.3em] py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." name="search"/>
+                <input type="text" className=" placeholder:text-slate-400 block bg-white w-[25em] border
+                 border-slate-300 rounded-[.3em] py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500
+                  focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search by area.." name="search"/>
                 <button className="bg-[#162A41] text-white h-[2.3em] w-[5em] rounded-[.2em] ml-[.5em]">Søg</button>
             </div>
           </div>

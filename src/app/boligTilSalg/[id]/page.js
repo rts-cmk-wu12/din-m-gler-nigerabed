@@ -18,7 +18,7 @@ export default async function BoligDetails({ params }) {
         height={800}
         width={500}
         alt="bolig"
-        className="h-[30em] w-[100%] object-cover"
+        className="h-[40em] w-[100%] object-cover "
       />
       <section className=" px-[15em] py-[2em]  ">
         <div className="flex justify-between items-center border-b-2 pb-[2em]">
@@ -134,7 +134,7 @@ export default async function BoligDetails({ params }) {
           chunks as necessary, making this the first true generator on the
           Internet.
         </article>
-        <div className="">
+        <div className="z-[-1]">
             <h3 className="text-lg font-semibold mb-[1em]">Ansvalig mægler</h3>
           <AnsvaligMælgerCard agent={BoligDetailsData.agent} />
         </div>

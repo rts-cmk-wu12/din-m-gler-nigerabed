@@ -5,11 +5,12 @@ import { useState, useEffect } from "react";
 
 export default function SearchByBoligType() {
   const router = useRouter();
+  
   const [boligType, setBoligType] = useState("All");
 
   function handleOnchange(e) {
     setBoligType(e.target.value);
-    console.log("=======", e.target.value);
+    // console.log("=======", e.target.value);
   }
 
   useEffect(() => {

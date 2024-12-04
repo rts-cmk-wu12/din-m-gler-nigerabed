@@ -11,8 +11,8 @@ export default async function AgentsDetailsPage({ params }) {
   return (
     <>
       <PageTitle title={"Kontakt en medarbejder"} />
-      <section className="flex justify-center p-[2em] mt-[2em]">
-        <div className="mr-[2em] border-neutral-200 border-2 p-[2em]">
+      <section className="flex justify-center p-[2em] mt-[2em] z-[-1]">
+        <div className="mr-[2em] border-neutral-200 border-2 p-[2em] z-[-1]">
           <AnsvaligMælgerCard
             key={allagentsDetails.id}
             agent={allagentsDetails}

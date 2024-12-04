@@ -12,7 +12,7 @@ import { signOut } from "next-auth/react";
 
 export default function Header() {
   const path = usePathname()
-  const session = useSession();
+  // const session = useSession();
   
 
   function handleSignOut(){
@@ -23,7 +23,7 @@ export default function Header() {
  
   return (
     <>
-      <header>
+      <header className="sticky top-0 bg-white">
         <div className="h-[2.5em] w-[100%] bg-[#162A41] text-white flex justify-around">
           <div className="flex justify-around items-center h-full w-[18em]">
             <Image src={email} height={150} width={150} alt="vector" />
@@ -33,7 +33,7 @@ export default function Header() {
           <Link href="/login">
           <div className="flex items-center justify-between w-[5em] mt-[.4em]">
             <Image src={user} height={20} width={20} alt="user" />
-            {session.status=="authenticated"?(<span onClick={ handleSignOut}>Log out</span>):(<span>Log ind</span>)}
+          <span>Log ind</span>
             
           </div>
           </Link>
@@ -55,9 +55,9 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <a href="" className="mr-8">
+                <Link href="/alleFavouritter" className={`${path === "/alleMedarbejder" ? "text-red-500" : "text-black"} mr-8`}>
                   Mine favoritter
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="">Kontakt os</a>
