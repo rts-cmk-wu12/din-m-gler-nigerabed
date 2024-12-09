@@ -11,7 +11,7 @@ export default function SearchFieldHero({search_text}) {
     router.push("./boligSearchPage?search_text=" +searchText);
   }
   return (
-    <form action="" onSubmit={handleSearch} className="flex">
+    <form onSubmit={handleSearch} className="flex">
       <input
         onChange={(e) => setSearchText(e.target.value)}
         value={searchText}
