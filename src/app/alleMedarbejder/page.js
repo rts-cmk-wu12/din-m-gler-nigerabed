@@ -1,4 +1,5 @@
 
+import KontactAgentForm from "@/components/KontactAgentForm";
 import MedarbejderCard from "@/components/MedarbejderCard";
 import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
@@ -11,6 +12,7 @@ export default async function alleMedarbejder() {
   return (
     <>
       <PageTitle title={"Alle Medarbejdere"} />
+     
       <div className="grid grid-cols-3 place-content-around px-[15em] pt-[2em] mb-[2em]">
         {allAgentsDataata.map((agent) => (
           <Link href={`/alleMedarbejder/${agent.id}`}>

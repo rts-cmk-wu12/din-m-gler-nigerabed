@@ -9,6 +9,7 @@ import PageTitle from "@/components/PageTitle";
 import { userLogin} from "../../actions/loginActionForm";
 import {useActionState, useEffect} from "react"
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default function login() {
   const [formState, formAction] = useActionState(userLogin, null);
@@ -67,10 +68,9 @@ export default function login() {
               <Image src={Facebook} height={100} width={100} alt="Facebook" className="mr-[.5em] w-[5em]"/>
               <Image src={Twitter} height={100} width={100} alt="Twitter"className="w-[5em]" />
             </div>
-            <p>
-              <a href=""></a>
-            </p>
+            
           </div>
+        <p className="text-xs mt-[1em]">Har du ikke en konto? <Link href="/operetBruger" ><span className="text-blue-500">Opret bruger.</span></Link> </p>
         </form>
       </section>
     </>

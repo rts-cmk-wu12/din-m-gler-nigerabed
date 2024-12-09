@@ -3,16 +3,24 @@ import KontactAgentForm from "@/components/KontactAgentForm";
 import PageTitle from "@/components/PageTitle";
 
 export default async function AgentsDetailsPage({ params }) {
+  
   const response = await fetch(
     `https://dinmaegler.onrender.com/agents/${params.id}`
   );
+  if (!response.ok) {
+    throw new Error(`Failed to fetch agent details for ID: ${id}`);
+  }
+
   const allagentsDetails = await response.json();
+  
   //   console.log("allagents Dataaaa", allagentsDetails);
   return (
     <>
-      <PageTitle title={"Kontakt en medarbejder"} />
+      <PageTitle title={"Kontakt en medarbejder"}  />
+      
       <section className="flex justify-center p-[2em] mt-[2em] z-[-1]">
-        <div className="mr-[2em] border-neutral-200 border-2 p-[2em] z-[-1]">
+        <div className="mr-[2em] border-neutral-200 border-2 p-[2em]">
+        
           <AnsvaligMælgerCard
             key={allagentsDetails.id}
             agent={allagentsDetails}

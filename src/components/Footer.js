@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex my-[1em]">
-            <Image src={icon3} height={40} width={40} alt="icon" />
+            <Image src={icon3} height={40} width={40} alt="icon" className="h-[3em]" />
             <div className="ml-[1em]">
               <span className="text-[.7em]">Butik</span>
               <p>Stændertorvet 78, 4000 Roskilde</p>

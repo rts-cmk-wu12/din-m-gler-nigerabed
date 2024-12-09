@@ -1,65 +1,29 @@
 import Image from "next/image";
-import group1 from "../../../assets/images/Group1.png";
-import group2 from "../../../assets/images/Group2.png";
-import group3 from "../../../assets/images/Group3.png";
-import group4 from "../../../assets/images/Group4.png";
+
 import AnsvaligMælgerCard from "@/components/AnsvaligMælgerCard";
 
-export default async function BoligDetails({ params }) {
+import ModalImageGallery from "@/components/ModalImageGallery";
+
+
+export default async function BoligDetails({ params,searchParams }) {
+
   const response = await fetch(
     `https://dinmaegler.onrender.com/homes/${params.id}`
   );
   const BoligDetailsData = await response.json();
-  console.log("BoligDetailsData", BoligDetailsData.agent);
+  //console.log("BoligDetailsData", BoligDetailsData.agent);
   return (
     <>
+  
       <Image
         src={BoligDetailsData.images[0].url}
         height={800}
         width={500}
         alt="bolig"
-        className="h-[40em] w-[100%] object-cover "
+        className="h-[40em] w-full "
       />
-      <section className=" px-[15em] py-[2em]  ">
-        <div className="flex justify-between items-center border-b-2 pb-[2em]">
-          <div className="font-semibold text-lg">
-            <h2>{BoligDetailsData.adress1}</h2>
-            <span className="mr-[.3em]">{BoligDetailsData.postalcode}</span>
-            <span>{BoligDetailsData.city}</span>
-          </div>
-          <div className="flex justify-around w-[10em] h-[2em]">
-            <Image
-              src={group1}
-              height={20}
-              width={20}
-              alt="group1"
-              className="pr-[1em] h-[1.5em] w-[2.5em]"
-            />
-            <Image
-              src={group2}
-              height={20}
-              width={20}
-              alt="group1"
-              className="pr-[1em]  h-[1.5em] w-[2.5em]"
-            />
-            <Image
-              src={group3}
-              height={20}
-              width={20}
-              alt="group1"
-              className="pr-[1em]  h-[1.5em] w-[2.5em]"
-            />
-            <Image
-              src={group4}
-              height={20}
-              width={20}
-              alt="group1"
-              className="h-[1.5em] w-[2em]"
-            />
-          </div>
-          <p className="font-semibold text-xl">Kr. {BoligDetailsData.price}</p>
-        </div>
-      </section>
+   <ModalImageGallery  image={searchParams.image} BoligDetailsData={BoligDetailsData} />
+   
       <section className="flex justify-around px-[10em] text-sm mb-[3em] leading-6">
         <article>
           <div className="flex justify-between">

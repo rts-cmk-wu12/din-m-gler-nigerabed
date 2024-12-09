@@ -6,24 +6,17 @@ import user from "../assets/images/user.png";
 import logo from "../assets/images/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; 
-import { useSession } from "next-auth/react";
+
 
 import { signOut } from "next-auth/react";
 
 export default function Header() {
   const path = usePathname()
-  // const session = useSession();
-  
-
-  function handleSignOut(){
-    signOut({ callbackUrl: "/" });
-   
-  }
-
+ 
  
   return (
     <>
-      <header className="sticky top-0 bg-white">
+      <header className="sticky top-0 bg-white z-[999]">
         <div className="h-[2.5em] w-[100%] bg-[#162A41] text-white flex justify-around">
           <div className="flex justify-around items-center h-full w-[18em]">
             <Image src={email} height={150} width={150} alt="vector" />
@@ -60,7 +53,7 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <a href="">Kontakt os</a>
+                <Link href="/kontaktOs" className={`${path === "kontaktOs" ? "text-red-500" : "text-black"} mr-8`}>Kontakt os</Link>
               </li>
             </ul>
           </nav>
