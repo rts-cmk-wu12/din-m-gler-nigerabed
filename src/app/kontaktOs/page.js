@@ -21,7 +21,7 @@ export default function KontaktOs() {
           </p>
         </div>
         <div className="flex justify-center items-center mt-[3em]">
-          <KontactAgentForm/>
+          <KontactAgentForm checkbox= {true}/>
           <div className=" w-[20em] p-[1em] border-solid border-neutral-200 border-2 ml-[2em] flex flex-col justify-center items-center">
             <div className="border-b-2 pb-[.5em] m-[1em] w-full flex flex-col justify-center items-center">
               <Image

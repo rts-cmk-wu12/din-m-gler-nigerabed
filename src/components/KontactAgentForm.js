@@ -7,7 +7,7 @@ import { useActionState } from "react"
 import Button from "./Button";
 
 
-export default function KontactAgentForm({agent}) {
+export default function KontactAgentForm({agent, checkbox = false}) {
 
   const [agentFormState, kontakAgenttFormAction] = useActionState(agentKontaktForm, null);
 
@@ -55,11 +55,12 @@ export default function KontactAgentForm({agent}) {
         Emne
         <input
           type="text"
-          name=""
+          name="emne"
           id=""
           placeholder="Hvad drejer din henvendelse sig om?"
           className="placeholder:text-slate-400 block bg-white w-[41em] border border-slate-300 rounded-[.2em] py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm my-[1em]"
         />
+         <span className="text-red-700 mb-[1em] text-[.6em] font-bold mt-[1em] block">{agentFormState?.emne?._errors}</span>
       </label>
       
       <label htmlFor="">
@@ -71,6 +72,10 @@ export default function KontactAgentForm({agent}) {
           className="placeholder:text-slate-400 block bg-white w-[41em] border border-slate-300 rounded-[.2em] py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm my-[1em]"
         ></textarea>
       </label>
+      {checkbox && <label className="pt-[1em] block" htmlFor="">
+                    <input id="newsletter" type="checkbox" name="newsletter" className="mr-[0.4em]" />
+                    Ja tak, jeg vil gerne modtage Din Mæglers nyhedsbrev.
+                </label>}
       <Button text={"Send besked"} />
     </form>
   );

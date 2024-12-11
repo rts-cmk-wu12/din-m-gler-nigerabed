@@ -54,13 +54,15 @@ export default function NyhedsBrev() {
               height={20}
               width={20}
               alt="arrow"
-              className="absolute top-[3.2em] right-[2em]"
+              className="absolute top-[2.5em] right-[2em]"
+
             />
+            <span className="sr-only">send</span> {/*screen readers Only*/}
             </button>
             <input
               type="text"
               placeholder="Indtast din email adresse"
-              className="text-sm py-4 pl-2 text-black w-[20em] mt-[.7em] block bg-white border border-slate-300 rounded-[.2em] 
+              className="text-sm py-4 pl-2 text-black w-[20em] block bg-white border border-slate-300 rounded-[.2em] 
               shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 "
               name="email"
             />

@@ -1,4 +1,5 @@
 import FavouriteCard from "@/components/FavouriteCard";
+import PageTitle from "@/components/PageTitle";
 import { cookies } from "next/headers";
 
 export default async function alleFavouritter(){
@@ -21,6 +22,7 @@ export default async function alleFavouritter(){
 
     return(
         <>
+        <PageTitle title={"Alle Favorit Boliger"}/>
 
             {favouriteBoligs.map(bolig =><FavouriteCard bolig={bolig}/>)}
         

@@ -1,6 +1,6 @@
 "use client";
-import { useRouter } from "next/navigation";import { useState } from "react";
-;
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function SearchFieldHero({search_text}) {
   const router = useRouter();

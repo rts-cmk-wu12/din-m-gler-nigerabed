@@ -1,6 +1,8 @@
 import AnsvaligMælgerCard from "@/components/AnsvaligMælgerCard";
 import KontactAgentForm from "@/components/KontactAgentForm";
 import PageTitle from "@/components/PageTitle";
+import search from "../../../assets/images/search2.png"
+import Image from "next/image";
 
 export default async function AgentsDetailsPage({ params }) {
   
@@ -44,11 +46,15 @@ export default async function AgentsDetailsPage({ params }) {
         <div>
             <div className="bg-[#EEF7FF] p-[2em]">
                 <h3 className=" border-b-2 mb-[2em] pb-[1em] w-[15em] font-semibold">Search Property</h3>
+                <div className="relative">
+
                 <input type="text"
                 placeholder="Search"
                 name="search"
-                 className="placeholder:text-slate-400 block bg-white w-[17em] border border-slate-300 rounded-[.2em] py-2 pl-4 pr-3
+                 className="placeholder:text-slate-400 block bg-white w-[17em] border border-slate-300 rounded-[.2em] py-2 pl-8 pr-3
                   shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" />
+                  <Image src={search} height={20} width={20} alt="search" className="absolute top-2 left-1.5"/>
+                </div>
             </div>
             <div className="bg-[#162A41] text-white flex flex-col justify-center items-center  py-[3em] text-xl mt-[1em]">
                 <h2 className="font-bold ">Find The Best <br /> Property <br /> For Rent Or Buy</h2>
