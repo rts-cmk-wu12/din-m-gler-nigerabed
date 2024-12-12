@@ -22,7 +22,7 @@ export default function login() {
 		}
 
 		if (formState.success) {
-			redirect("/")
+			redirect("/alleFavouritter")
 		}
 	}, [formState])
 

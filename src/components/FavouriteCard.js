@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import Button from "./Button";
 import Image from "next/image";
 import { getCookie } from "cookies-next";
 import { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
 
 export default function FavouriteCard({ bolig }) {
   const BgColors = {
@@ -18,54 +19,49 @@ export default function FavouriteCard({ bolig }) {
   const token = getCookie("dm_token");
   const userId = getCookie("dm_userid");
 
- 
-let userData;
+  let userData;
   useEffect(() => {
-
     const fetchData = async () => {
-         
       const userRes = await fetch("https://dinmaegler.onrender.com/users/me", {
         method: "get",
         headers: new Headers({
           Authorization: "Bearer " + token,
-        })
+        }),
       });
 
-       userData = await userRes.json();
-        setFavouriteHome(userData.homes);
+      userData = await userRes.json();
+      setFavouriteHome(userData.homes);
     };
 
-    fetchData(); 
-  
+    fetchData();
   }, [token]);
 
   const handleDeletefavourite = async () => {
-    
-
     let updatedHomes;
 
-    
-      // Unfavourite the home by removing its ID
-      updatedHomes = favouriteHomes.filter((homeId) => homeId !== bolig.id);
-      console.log("Unfavourited:", bolig.id);
-   
+    // Unfavourite the home by removing its ID
+    updatedHomes = favouriteHomes.filter((homeId) => homeId !== bolig.id);
+    console.log("Unfavourited:", bolig.id);
 
     setFavouriteHome(updatedHomes); // Update local state
 
     // Push updated homes to the server
-    const response = await fetch("https://dinmaegler.onrender.com/users/" + userId, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-      body: JSON.stringify({ homes: updatedHomes }), // Send updated list
-    });
+    const response = await fetch(
+      "https://dinmaegler.onrender.com/users/" + userId,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ homes: updatedHomes }), // Send updated list
+      }
+    );
 
     const result = await response.json();
     console.log(`Success: ${result.message || "Data pushed successfully"}`);
+    redirect("/alleFavouritter")
   };
-  
 
   return (
     <>
