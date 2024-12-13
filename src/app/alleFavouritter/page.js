@@ -12,7 +12,6 @@ export default async function alleFavouritter() {
     redirect("/login");
   }
   // fetch from users/me
-  // TODO: fetch from api
   const userRes = await fetch("https://dinmaegler.onrender.com/users/me", {
     method: "get",
     headers: new Headers({
