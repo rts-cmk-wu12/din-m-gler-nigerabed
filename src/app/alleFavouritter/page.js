@@ -7,7 +7,7 @@ export default async function alleFavouritter() {
   const cookieStore = await cookies();
   const token = cookieStore.get("dm_token");
   if (token === undefined || token === "") {
-    console.log("helooooo", token);
+    // console.log("helooooo", token);
 
     redirect("/login");
   }
