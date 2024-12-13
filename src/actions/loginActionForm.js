@@ -24,7 +24,7 @@ const schema = z.object({
       "content-type": "application/json"
 		},
 		body: JSON.stringify({
-      identifier,
+            identifier,
 			password
 		})
 	})

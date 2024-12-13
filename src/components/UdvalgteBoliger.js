@@ -22,9 +22,7 @@ export default async function UdvalgteBoliger() {
       <div className="grid grid-cols-2 place-content-around px-[15em]">
         {firstFourBolig.map((bolig) => (
             <div key={bolig.id} >
-              <Link href={`/boligTilSalg/${bolig.id}`}>
                 <BoligCard bolig={bolig} />
-              </Link>
             </div>
         ))}
       </div>

@@ -33,7 +33,8 @@ export default function BoligCard({ bolig }) {
   }, [token, bolig.id]);
 
   // Toggle favorite status
-  const handleToggleFavorite = async () => {
+  const handleToggleFavorite = async (e) => {
+    e.preventDefault()
     let updatedFavorites;
 
     if (isFavorite) {
@@ -70,7 +71,7 @@ export default function BoligCard({ bolig }) {
           alt="bolig"
           className="h-[15em] w-[100%]"
         />
-      </Link>
+      
 
       <div className="h-[2em] w-[2em] rounded-full flex justify-center items-center bg-white">
         <Image
@@ -92,6 +93,7 @@ export default function BoligCard({ bolig }) {
           <span className="text-xs">Ejerudgift : {bolig.netto} kr</span>
         </span>
       </div>
+      </Link>
     </section>
   );
 }
