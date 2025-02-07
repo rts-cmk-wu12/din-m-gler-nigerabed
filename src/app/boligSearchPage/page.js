@@ -31,7 +31,7 @@ export default async function boligSearchPage({searchParams}) {
       </div>
       <div className="grid grid-cols-2 place-content-around px-[15em] pt-[2em]">
         {allBoligData.map((bolig) => (
-          <Link href={`/boligTilSalg/${bolig.id}`}>
+          <Link href={`/boligTilSalg/${bolig.id}`} key={bolig.id}>
             <BoligCard key={bolig.id} bolig={bolig} />
           </Link>
         ))}

@@ -17,6 +17,7 @@ const schema = z.object({
 	if (!result.success) return result.error.format()
   
 
+try{
 
 	const response = await fetch("https://dinmaegler.onrender.com/auth/local", {
     method: "POST",
@@ -33,8 +34,11 @@ const schema = z.object({
   
 	console.log(data)
 	
-	cookieStore.set("dm_token", data.jwt)
-	cookieStore.set("dm_userid", data.user.id)
+	cookieStore.set("dm_token", data.jwt, {maxAge: 60 * 60* 24})
+	cookieStore.set("dm_userid", data.user.id, {maxAge: 60 * 60* 24})
   
 	return { success: true }
+}catch (error) {
+	throw new Error(error)
+}
 }

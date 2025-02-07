@@ -1,5 +1,3 @@
-import { button } from "@nextui-org/react";
-
 
 export default function Button({text,width=10, unit="em", type="submit"}){
     return(

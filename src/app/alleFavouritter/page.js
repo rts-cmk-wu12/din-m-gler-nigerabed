@@ -32,7 +32,7 @@ export default async function alleFavouritter() {
       <PageTitle title={"Alle Favorit Boliger"} />
 
       {favouriteBoligs.map((bolig) => (
-        <FavouriteCard bolig={bolig} />
+        <FavouriteCard bolig={bolig} key={bolig.id}/>
       ))}
     </>
   );
